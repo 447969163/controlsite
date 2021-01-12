@@ -1,0 +1,19 @@
+.menu-container {
+    flex: 10;
+    width: 15%;
+    height: 100%;
+    background-color: #4f4e50;
+}
+.menu-container > span{
+    display: block;
+    padding: 1rem 0.5rem;
+    color: #ffffff;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.menu-container > span:hover {
+    color: #e0e0e0;
+}
+.menu-container > .selected {
+    background-color: #69676b;
+}

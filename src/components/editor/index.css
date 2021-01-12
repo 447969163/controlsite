@@ -1,0 +1,21 @@
+.editor-control {
+    margin: 3rem auto 0 auto;
+    width: 90%;
+    border: 0.1rem solid #e0e0e0;
+    box-sizing: border-box;
+}
+.editor-control > span {
+    padding: 0.6rem;
+    display: inline-block;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.editor-content {
+    margin: 0 auto;
+    width: 90%;
+    height: 30rem;
+    border-right: 0.1rem solid #e0e0e0;
+    border-bottom: 0.1rem solid #e0e0e0;
+    border-left: 0.1rem solid #e0e0e0;
+    box-sizing: border-box;
+}
