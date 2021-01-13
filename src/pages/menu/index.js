@@ -24,7 +24,6 @@ class Menu extends Component {
         return (
             <Fragment>
                 <div className="menu-container">
-                    {console.log(selectedIndex)}
                     {menuList.map((item, i) => {
                         return <span key={i} onClick={() => { this.linkTo(item) }} className={i == selectedIndex ? 'selected' : ''}>{item.name}</span>
                     })}

@@ -1,48 +1,77 @@
-import 'draft-js/dist/Draft.css';
-import './index.css';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Editor, EditorState, RichUtils } from 'draft-js';
-
-export default class EditorComponent extends Component {
+import "draft-js/dist/Draft.css";
+import styles from './index.css'
+// 定义按钮内容及绑定的style模块
+const styleDefinedMap = [
+    { label: 'Monospace', style: 'code' },
+];
+// style模块配置
+const styleMap = {
+    code: {
+        backgroundColor: 'rgba(0, 0, 0, 0.05)',
+        fontFamily: '"Inconsolata", "Menlo", "Consolas", monospace',
+        fontSize: 16,
+        padding: 2,
+    },
+};
+// 按钮控件组件
+class InlineStyleControls extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            // 初始化状态
-            editorState: EditorState.createEmpty()
-        }
     }
-    changeEidtor(editorState) {
-        this.setState({ editorState })
+    // 样式切换处理函数
+    onToggle(e,style) {
+        e.preventDefault();
+        this.props.onToggle(style);
+    };
+    render() {
+        return (
+            <div className={styles["RichEditor-controls"]}>
+                {styleDefinedMap.map(item =>
+                    <span key={item.label} onClick={($event)=>{this.onToggle($event,item.style)}}>
+                        {item.label}
+                    </span>
+                )}
+            </div>
+        );
     }
-    toggleBlockType(blockType) {
-        this.changeEidtor(
-            RichUtils.toggleBlockType(
+
+};
+// 组合组件
+export default class MyEditor extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { editorState: EditorState.createEmpty() };
+        this.onChange = (editorState) => this.setState({ editorState });
+        this.toggleInlineStyle = (style) => this._toggleInlineStyle(style);
+    }
+    // 切换行内样式
+    _toggleInlineStyle(inlineStyle) {
+        this.onChange(
+            RichUtils.toggleInlineStyle(
                 this.state.editorState,
-                blockType
+                inlineStyle
             )
         );
     }
     render() {
-        const { editorState } = this.state
-        const editorStyleMap = {
-            //字体
-            Bold:{
-                fontWeight: '600',
-            },
-            Italic:{
-                fontStyle: 'italic',
-            },
-        };
+        const { editorState } = this.state;
         return (
-            <Fragment>
-                <div className="editor-control">
-                    <span onClick={() => { this.toggleBlockType('header-one') }}>H1</span>
-                    <span onClick={()=>{this.toggleBlockType('Bold')}}>B</span>
+            <div>
+                <InlineStyleControls
+                    editorState={editorState}
+                    onToggle={this.toggleInlineStyle}
+                />
+                <div>
+                    <Editor
+                        customStyleMap={styleMap}
+                        editorState={editorState}
+                        onChange={this.onChange}
+                        spellCheck={true}
+                    />
                 </div>
-                <div className="editor-content">
-                    <Editor onChange={(editorState) => { this.changeEidtor(editorState) }} editorState={editorState} customStyleMap = {editorStyleMap}/>
-                </div>
-            </Fragment>
-        )
+            </div>
+        );
     }
 }

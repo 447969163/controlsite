@@ -25,7 +25,7 @@ class ContentManagement extends Component {
         }
     }
     search() {
-        console.log(this.state.keywords)
+        // console.log(this.state.keywords)
     }
     addArticle() {
         this.props.history.push('/artile')
