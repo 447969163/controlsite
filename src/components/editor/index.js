@@ -19,8 +19,6 @@ const styleMap = {
     bold: {
         fontWeight: 'bold'
     },
-    
-
 };
 // 按钮控件组件
 class InlineStyleControls extends Component {
@@ -62,6 +60,10 @@ export default class MyEditor extends React.Component {
             )
         );
     }
+    // 保存按钮
+    save(){
+        console.log('点击了保存')
+    }
     render() {
         const { editorState } = this.state;
         return (
@@ -79,6 +81,9 @@ export default class MyEditor extends React.Component {
                         onChange={this.onChange}
                         spellCheck={true}
                     />
+                </div>
+                <div className="save-btn">
+                    <button onClick={()=>{this.save()}}>发布</button>
                 </div>
             </Fragment>
 

@@ -33,3 +33,25 @@
 .inline-style-control > span:hover {
   color: #585353;
 }
+.save-btn {
+  margin: 1rem auto;
+  width: 95%;
+}
+.save-btn > button {
+  float: right;
+  padding: 0.4rem 0.8rem;
+  background-color: #c7c7c7;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
+.save-btn > button:hover {
+  background-color:#a7a4a4;
+}
+.save-btn::after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
