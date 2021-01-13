@@ -12,7 +12,7 @@ export default class Article extends Component {
                 <div className="article-container">
                     <Menu />
                     <div className="article-content">
-                        <div className="title">
+                        <div className="title-editor">
                             <input type="text" placeholder="请输入标题"/>
                         </div>
 
