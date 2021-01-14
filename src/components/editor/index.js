@@ -1,7 +1,6 @@
-import React, { Component, Fragment,convertToRaw } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Editor, EditorState, RichUtils } from 'draft-js';
 import {stateToHTML} from 'draft-js-export-html';
-import Axios from '../../request'
 import "draft-js/dist/Draft.css";
 import './index.css'
 // 定义按钮内容及绑定的style模块
@@ -67,14 +66,13 @@ export default class MyEditor extends React.Component {
             )
         );
     }
-    save(contentState) {
+    async save(contentState) {
         // 标题
         let articleTitle = this.props.title
         // console.log(articleTitle)
         // 编辑器中内容转为html片段
         let contentToHtml = stateToHTML(contentState)
         // console.log(contentToHtml)
-
     }
     render() {
         const { editorState } = this.state;

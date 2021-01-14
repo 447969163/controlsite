@@ -28,49 +28,47 @@ class ContentManagement extends Component {
     }
     addArticle() {
         this.props.history.push('/artile')
-     }
-    edit(){}
-    delete(){}
+    }
+    edit() { }
+    delete() { }
     render() {
         const { listHead, listData } = this.state
         return (
             <Fragment>
                 <div className="content-management-container">
-                    <div className="content-management-content">
-                        <div className="control-region">
-                            <div className="search">
-                                <input type="text" placeholder="输入文章名搜索" onChange={(e) => { this.setState({ keywords: e.target.value }) }} />
-                                <button onClick={() => { this.search() }}>搜索</button>
-                            </div>
-                            <button onClick={() => { this.addArticle() }}>新增</button>
+                    <div className="control-region">
+                        <div className="search">
+                            <input type="text" placeholder="输入文章名搜索" onChange={(e) => { this.setState({ keywords: e.target.value }) }} />
+                            <button onClick={() => { this.search() }}>搜索</button>
                         </div>
-                        <div className="article-list">
-                            <div className="article-table">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            {listHead.map((item, i) => {
-                                                return <td key={i} style={{ flex: 1 }}>{item.name}</td>
-                                            })}
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {listData.map((item, i) => {
-                                            return <tr key={i}>
-                                                <td>{i + 1}</td>
-                                                <td title={item.title}>{item.title}</td>
-                                                <td title={item.desc}>{item.desc}</td>
-                                                <td title={item.category}>{item.category}</td>
-                                                <td title={item.createTime}>{item.createTime}</td>
-                                                <td>
-                                                    <span onClick={()=>{this.edit(item.id)}}>修改</span>
-                                                    <span onClick={()=>{this.delete(item.id)}}>删除</span>
-                                                </td>
-                                            </tr>
+                        <button onClick={() => { this.addArticle() }}>新增</button>
+                    </div>
+                    <div className="article-list">
+                        <div className="article-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        {listHead.map((item, i) => {
+                                            return <td key={i} style={{ flex: 1 }}>{item.name}</td>
                                         })}
-                                    </tbody>
-                                </table>
-                            </div>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {listData.map((item, i) => {
+                                        return <tr key={i}>
+                                            <td>{i + 1}</td>
+                                            <td title={item.title}>{item.title}</td>
+                                            <td title={item.desc}>{item.desc}</td>
+                                            <td title={item.category}>{item.category}</td>
+                                            <td title={item.createTime}>{item.createTime}</td>
+                                            <td>
+                                                <span onClick={() => { this.edit(item.id) }}>修改</span>
+                                                <span onClick={() => { this.delete(item.id) }}>删除</span>
+                                            </td>
+                                        </tr>
+                                    })}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

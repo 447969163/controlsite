@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from "react";
 import './App.css';
-import Routes from './router/index'
+import RouteView from './router/index'
 import Menu from './components/menu'
+import TagNav from "./components/navtag";
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -10,11 +11,16 @@ export default class App extends Component {
     return (
       <div className="app">
         <Fragment>
-          <div className="menu-component">
-            <Menu />
+          <div className="left-menu">
+            <Menu/>
           </div>
-          <div className="route-component">
-            <Routes />
+          <div className="right-content">
+            <div className="top-tag">
+            <TagNav/>
+            </div>
+            <div className="bottom-route-view">
+            <RouteView />
+            </div>
           </div>
         </Fragment>
       </div>

@@ -8,9 +8,7 @@ export default class adManagement extends Component {
         return (
             <Fragment>
                 <div className="ad-management-container">
-                    <div className="ad-management-content">
-                        jjjj
-                    </div>
+                    广告管理
                 </div>
             </Fragment>
         )

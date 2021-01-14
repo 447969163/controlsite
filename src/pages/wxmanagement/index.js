@@ -8,9 +8,7 @@ export default class WxManagement extends Component {
         return (
             <Fragment>
                 <div className="wx-management-container">
-                    <div className="wx-management-content">
-                        dsad
-                </div>
+                    小程序设置
                 </div>
             </Fragment>
         )

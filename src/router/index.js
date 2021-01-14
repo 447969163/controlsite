@@ -6,7 +6,7 @@ import AdManagement from "../pages/admanagement";
 import UserList from "../pages/userList";
 import WxManagement from "../pages/wxmanagement";
 import Article from "../pages/artitle";
-export default class Routes extends React.Component {
+export default class RouteView extends React.Component {
     constructor(props) {
         super(props)
     }

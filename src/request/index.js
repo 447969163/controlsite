@@ -1,13 +1,12 @@
 import axios from 'axios'
-export default class Axios {
-    constructor(setting){
-        this.path = setting.path
-        this.params = setting.params
+class Axios {
+    constructor(){
     }
-    get(){
-        return axios.get(this.path,this.params)
+    get(path,params){
+        return axios.get(path,params)
     }
-    post(){
-        return axios.post(this.path,this.params)
+    post(path,params){
+        return axios.post(path,params)
     }
 }
+export default InsertArticle = (data) => {Axios.get('',data)}

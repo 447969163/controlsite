@@ -1,0 +1,11 @@
+.nav-tag-container {
+    width: 100%;
+}
+.nav-tag-container > span {
+    position: relative;
+    font-size: 0.8rem;
+}
+.nav-tag-container > span:not(:last-child):after{
+    content: '>';
+    padding: 0.2rem;
+}

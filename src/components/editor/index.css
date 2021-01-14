@@ -4,23 +4,33 @@
     width: 100%;
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
-    box-sizing: border-box;
+    
     overflow: hidden;
 }
 .editor-content {
     margin: 0 auto;
+    padding: 0.4rem;
     width: 100%;
     height: 35rem;
     border-right: 0.1rem solid #e6e6e669;
     border-bottom: 0.1rem solid #e6e6e669;
     border-left: 0.1rem solid#e6e6e669;
-    box-sizing: border-box;
     overflow-y: auto;
+}
+.editor-content::-webkit-scrollbar {/*滚动条整体样式*/
+  width: 0.1rem;   /*高宽分别对应横竖滚动条的尺寸*/
+}
+.editor-content::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background: transparent;
+}
+.editor-content::-webkit-scrollbar-track {
+  background: transparent;
 }
 .inline-style-control {
   width: 100%;
   background-color: #e6e6e669;
-  box-sizing: border-box;
+  
 }
 .inline-style-control > span {
   padding: 0.8rem;
@@ -54,15 +64,4 @@
 }
 .save-btn > button:hover {
   background-color: #e0e0e0;
-}
-
-::-webkit-scrollbar {/*滚动条整体样式*/
-  width: 0.2rem;     /*高宽分别对应横竖滚动条的尺寸*/
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 0.5rem;
-  background: #a59f9f69;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
 }

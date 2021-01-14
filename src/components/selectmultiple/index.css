@@ -1,0 +1,11 @@
+.select-multi-container {
+    width: 100%;
+}
+.imitate-select {
+    width: 100%;
+}
+.imitate-select > span { 
+    display: inline-block;
+    width: 100%;
+    border: 0.1rem solid #e0e0e0;  
+}
