@@ -1,11 +1,14 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment,convertToRaw } from 'react';
 import { Editor, EditorState, RichUtils } from 'draft-js';
+import {stateToHTML} from 'draft-js-export-html';
+import Axios from '../../request'
 import "draft-js/dist/Draft.css";
 import './index.css'
 // 定义按钮内容及绑定的style模块
 const styleDefinedMap = [
     { label: 'Bold', style: 'bold' },
-    { label: 'Code', style: 'code' }
+    { label: 'Code', style: 'code' },
+    { label: 'H1', style: 'hOne' },
 ];
 // style模块配置
 const styleMap = {
@@ -19,6 +22,10 @@ const styleMap = {
     bold: {
         fontWeight: 'bold'
     },
+    hOne: {
+        fontSize: '1.5rem',
+        fontWeight: 'bold'
+    },
 };
 // 按钮控件组件
 class InlineStyleControls extends Component {
@@ -29,7 +36,7 @@ class InlineStyleControls extends Component {
     onToggle(e, style) {
         e.preventDefault();
         this.props.onToggle(style);
-    };
+    }
     render() {
         return (
             <div className="inline-style-control">
@@ -60,12 +67,18 @@ export default class MyEditor extends React.Component {
             )
         );
     }
-    // 保存按钮
-    save(){
-        console.log('点击了保存')
+    save(contentState) {
+        // 标题
+        let articleTitle = this.props.title
+        // console.log(articleTitle)
+        // 编辑器中内容转为html片段
+        let contentToHtml = stateToHTML(contentState)
+        // console.log(contentToHtml)
+
     }
     render() {
         const { editorState } = this.state;
+        const contentState = editorState.getCurrentContent();
         return (
             <Fragment>
                 <div className="editor-control">
@@ -83,10 +96,9 @@ export default class MyEditor extends React.Component {
                     />
                 </div>
                 <div className="save-btn">
-                    <button onClick={()=>{this.save()}}>发布</button>
+                    <button onClick={()=>{this.save(contentState)}}>保存</button>
                 </div>
             </Fragment>
-
         );
     }
 }

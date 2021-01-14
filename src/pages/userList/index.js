@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./index.css";
-import Menu from "../menu/index";
+// import Menu from "../menu/index";
 export default class UserList extends Component {
     constructor(props) {
         super(props)
@@ -26,7 +26,7 @@ export default class UserList extends Component {
         return (
             <Fragment>
                 <div className="user-list-container">
-                    <Menu selectedIndex="3" />
+                    {/* <Menu selectedIndex="3" /> */}
                     <div className="user-list-content">
                         <table>
                             <thead>
