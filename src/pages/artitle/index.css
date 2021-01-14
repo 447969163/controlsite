@@ -6,6 +6,10 @@
 .article-content {
     flex: 90;
 }
+.article-edior {
+    margin: 0 auto;
+    width: 95%;
+}
 .title-editor {
     margin: 1.2rem auto;
     width: 95%;

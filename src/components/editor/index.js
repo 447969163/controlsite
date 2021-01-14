@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { Editor, EditorState, RichUtils } from 'draft-js';
+import Axios from '../../request'
 import "draft-js/dist/Draft.css";
 import './index.css'
 // 定义按钮内容及绑定的style模块
 const styleDefinedMap = [
     { label: 'Bold', style: 'bold' },
-    { label: 'Code', style: 'code' }
+    { label: 'Code', style: 'code' },
+    { label: 'H1', style: 'hOne' },
 ];
 // style模块配置
 const styleMap = {
@@ -19,7 +21,10 @@ const styleMap = {
     bold: {
         fontWeight: 'bold'
     },
-    
+    hOne: {
+        fontSize: '1.5rem',
+        fontWeight: 'bold'
+    },
 
 };
 // 按钮控件组件
@@ -31,7 +36,7 @@ class InlineStyleControls extends Component {
     onToggle(e, style) {
         e.preventDefault();
         this.props.onToggle(style);
-    };
+    }
     render() {
         return (
             <div className="inline-style-control">
@@ -62,6 +67,15 @@ export default class MyEditor extends React.Component {
             )
         );
     }
+    save() {
+        let setting = {
+            path: 'http://www.baidu.com',
+            params: {
+                name:'1'
+            }
+        }
+        console.log(new Axios(setting).get(),'aaaa')
+    }
     render() {
         const { editorState } = this.state;
         return (
@@ -80,8 +94,10 @@ export default class MyEditor extends React.Component {
                         spellCheck={true}
                     />
                 </div>
+                <div className="save-btn">
+                    <button onClick={()=>{this.save()}}>保存</button>
+                </div>
             </Fragment>
-
         );
     }
 }

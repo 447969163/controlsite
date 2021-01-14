@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import Menu from "../menu";
+// import Menu from "../menu";
 import Editor from "../../components/editor";
 import "./index.css";
 export default class Article extends Component {
@@ -10,12 +10,16 @@ export default class Article extends Component {
         return (
             <Fragment>
                 <div className="article-container">
-                    <Menu />
+                    {/* <Menu /> */}
                     <div className="article-content">
                         <div className="title-editor">
                             <input type="text" placeholder="请输入标题"/>
                         </div>
-
+                        <div className="select-category">
+                            {/* <select>
+                                <option value={item.optionId}>{item.optionName}</option>
+                            </select> */}
+                        </div>
                         <div className="article-edior">
                             <Editor />
                         </div>

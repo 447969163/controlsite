@@ -1,6 +1,5 @@
-.menu-container {
-    flex: 10;
-    width: 15%;
+.menu-container{
+    width: 100%;
     height: 100%;
     background-color: #4f4e50;
 }
@@ -13,7 +12,4 @@
 }
 .menu-container > span:hover {
     color: #e0e0e0;
-}
-.menu-container > .selected {
-    background-color: #69676b;
 }

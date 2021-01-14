@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import "./index.css";
-import Menu from "../menu/index";
 class ContentManagement extends Component {
     constructor(props) {
         super(props)
@@ -37,7 +36,6 @@ class ContentManagement extends Component {
         return (
             <Fragment>
                 <div className="content-management-container">
-                    <Menu selectedIndex="1" />
                     <div className="content-management-content">
                         <div className="control-region">
                             <div className="search">

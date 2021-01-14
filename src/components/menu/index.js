@@ -12,7 +12,6 @@ class Menu extends Component {
                 { id: "3", name: "用户列表", path: "/userList" },
                 { id: "4", name: "小程序设置", path: "/wxmanagement" }
             ],
-            selectedIndex: this.props.selectedIndex
         }
     }
     // 跳转路由
@@ -20,12 +19,12 @@ class Menu extends Component {
         this.props.history.push(item.path)
     }
     render() {
-        const { menuList, selectedIndex } = this.state
+        const { menuList } = this.state
         return (
             <Fragment>
                 <div className="menu-container">
                     {menuList.map((item, i) => {
-                        return <span key={i} onClick={() => { this.linkTo(item) }} className={i == selectedIndex ? 'selected' : ''}>{item.name}</span>
+                        return <span key={i} onClick={() => { this.linkTo(item) }}>{item.name}</span>
                     })}
                 </div>
             </Fragment>
