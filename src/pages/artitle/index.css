@@ -1,11 +1,16 @@
 .article-container {
     width: 100%;
 }
+.extra-info {
+    display: flex;
+    align-items: center;
+}
 .article-edior {
     margin: 0 auto;
     width: 95%;
 }
 .title-editor {
+    flex: 90;
     margin: 1.2rem auto;
     width: 95%;
     height: 2rem;
@@ -16,4 +21,7 @@
     height: 100%;
     border: 0.1rem solid #e0e0e0;
     border-radius: 0.2rem;
+}
+.select-category {
+    flex: 10;
 }

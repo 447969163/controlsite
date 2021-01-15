@@ -26,11 +26,13 @@ class ContentManagement extends Component {
     search() {
         // console.log(this.state.keywords)
     }
-    addArticle() {
+    createArticle() {
         this.props.history.push('/artile')
     }
-    edit() { }
-    delete() { }
+    updateArticle(id) {
+        this.props.history.push('/artile/' + id)
+    }
+    deleteArticle() { }
     render() {
         const { listHead, listData } = this.state
         return (
@@ -41,7 +43,7 @@ class ContentManagement extends Component {
                             <input type="text" placeholder="输入文章名搜索" onChange={(e) => { this.setState({ keywords: e.target.value }) }} />
                             <button onClick={() => { this.search() }}>搜索</button>
                         </div>
-                        <button onClick={() => { this.addArticle() }}>新增</button>
+                        <button onClick={() => { this.createArticle() }}>新增</button>
                     </div>
                     <div className="article-list">
                         <div className="article-table">
@@ -62,8 +64,8 @@ class ContentManagement extends Component {
                                             <td title={item.category}>{item.category}</td>
                                             <td title={item.createTime}>{item.createTime}</td>
                                             <td>
-                                                <span onClick={() => { this.edit(item.id) }}>修改</span>
-                                                <span onClick={() => { this.delete(item.id) }}>删除</span>
+                                                <span onClick={() => { this.updateArticle(item.id) }}>修改</span>
+                                                <span onClick={() => { this.deleteArticle(item.id) }}>删除</span>
                                             </td>
                                         </tr>
                                     })}

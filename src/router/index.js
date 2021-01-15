@@ -16,6 +16,7 @@ export default class RouteView extends React.Component {
                 <Route path="/home" component={Home}></Route>
                 <Route path="/admanagement" component={AdManagement}></Route>
                 <Route path="/contentmanagement" component={ContentManagement}></Route>
+                <Route path="/artile/:id" component={Article}></Route>
                 <Route path="/artile" component={Article}></Route>
                 <Route path="/userList" component={UserList}></Route>
                 <Route path="/wxmanagement" component={WxManagement}></Route>

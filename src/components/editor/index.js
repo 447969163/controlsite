@@ -67,6 +67,7 @@ export default class MyEditor extends React.Component {
         );
     }
     async save(contentState) {
+        this.props.articleId ? console.log('修改') : console.log('新增')
         // 标题
         let articleTitle = this.props.title
         // console.log(articleTitle)

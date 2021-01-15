@@ -11,13 +11,14 @@ class Menu extends Component {
                 { id: "2", name: "广告设置", path: "/admanagement" },
                 { id: "3", name: "用户列表", path: "/userList" },
                 { id: "4", name: "小程序设置", path: "/wxmanagement" }
-            ]
+            ],
         }
     }
 
     // 跳转路由
     linkTo(item) {
         this.props.history.push(item.path)
+        this.props.getCurrentUrl(item.path)
     }
     render() {
         const { menuList } = this.state

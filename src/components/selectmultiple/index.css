@@ -2,9 +2,13 @@
     width: 100%;
 }
 .imitate-select {
+    position: relative;
     width: 100%;
 }
-.imitate-select > span { 
+.imitate-select > span {
+    position: absolute;
+    top: 0;
+    left: 0; 
     display: inline-block;
     width: 100%;
     border: 0.1rem solid #e0e0e0;  

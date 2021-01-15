@@ -1,12 +1,8 @@
 import axios from 'axios'
-class Axios {
-    constructor(){
-    }
-    get(path,params){
-        return axios.get(path,params)
-    }
-    post(path,params){
-        return axios.post(path,params)
-    }
-}
-export default InsertArticle = (data) => {Axios.get('',data)}
+axios.defaults.baseURL = 'http://127.0.0.1'
+// 新增文章接口
+export default createArticleRequest = (data) => {axios.post('/backstage/artile/createarticle',data)}
+// 更新文章接口
+export default updateArticleRequest = (data) => {axios.post('/backstage/artile/updatearticle',data)}
+// 删除文章接口
+export default deletArticleRequest = (data)=>{axios.post('/backstage/artile/deletArticle',data)}
