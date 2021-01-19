@@ -6,6 +6,7 @@ import AdManagement from "../pages/admanagement";
 import UserList from "../pages/userList";
 import WxManagement from "../pages/wxmanagement";
 import Article from "../pages/artitle";
+import Login from "../pages/login";
 export default class RouteView extends React.Component {
     constructor(props) {
         super(props)
@@ -13,6 +14,7 @@ export default class RouteView extends React.Component {
     render() {
         return (
             <Switch>
+                {/* <Route path="/login" component={Login}></Route> */}
                 <Route path="/home" component={Home}></Route>
                 <Route path="/admanagement" component={AdManagement}></Route>
                 <Route path="/contentmanagement" component={ContentManagement}></Route>

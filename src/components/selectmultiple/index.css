@@ -4,12 +4,36 @@
 .imitate-select {
     position: relative;
     width: 100%;
+    border: 0.1rem solid #e0e0e0;
+    border-radius: 0.2rem;
 }
 .imitate-select > span {
-    position: absolute;
-    top: 0;
-    left: 0; 
-    display: inline-block;
+    display: block;
+    padding: 0.3rem 0.6rem;
     width: 100%;
-    border: 0.1rem solid #e0e0e0;  
+    color: #808080;
+    font-size: 0.8rem;
+}
+.imitate-select > span > b:not(:last-child)::after {
+    content: ',';
+}
+.imitate-option {
+    position: absolute;
+    left: -0.1rem;
+    width: 100%;
+    border-left: 0.1rem solid #e0e0e0;
+    border-right: 0.1rem solid #e0e0e0;
+    border-bottom: 0.1rem solid #e0e0e0;
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+    background-color: #ffffff;
+    box-sizing: content-box;
+}
+.imitate-option > span {
+    display: block;
+    padding: 0.3rem 0.6rem;
+    width: 100%;
+    color: #808080;
+    font-size: 0.8rem;
+    cursor: pointer;
 }

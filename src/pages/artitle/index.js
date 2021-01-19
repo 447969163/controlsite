@@ -8,15 +8,21 @@ class Article extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: ''
+            titleContent: '',
+            categoryContent:[]
         }
     }
     getTitleContent(e) {
         this.setState(
             {
-                title: e.target.value
+                titleContent: e.target.value
             }
         )
+    }
+    getCategoryContent(categoryContent) {
+        this.setState({
+            categoryContent: categoryContent
+        })
     }
     // componentDidMount(){
     //     if(this.props.match.params.id) {
@@ -27,7 +33,7 @@ class Article extends Component {
     //     }
     // }
     render() {
-        const { title } = this.state
+        const { titleContent ,categoryContent} = this.state
         return (
             <Fragment>
                 <div className="article-container">
@@ -36,11 +42,11 @@ class Article extends Component {
                             <input type="text" placeholder="请输入标题" onChange={(e) => { this.getTitleContent(e) }} />
                         </div>
                         <div className="select-category">
-                            <SelectMultiple />
+                            <SelectMultiple getCategoryContent={this.getCategoryContent.bind(this)}/>
                         </div>
                     </div>
                     <div className="article-edior">
-                        <Editor title={title} articleId={this.props.match.params.id ? this.props.match.params.id : ''} />
+                        <Editor titleContent={titleContent} categoryContent={categoryContent} articleId={this.props.match.params.id ? this.props.match.params.id : ''} />
                     </div>
                 </div>
             </Fragment>

@@ -7,5 +7,5 @@
 }
 .nav-tag-container > span:not(:last-child):after{
     content: '>';
-    padding: 0.2rem;
+    padding: 0.4rem;
 }
