@@ -15,7 +15,7 @@ export default class Selectmultiple extends Component {
         this.selectedIdArr = []
     }
     handleSelectedId(currentId) {
-        if (this.selectedIdArr.indexOf(currentId) == -1) {
+        if (this.selectedIdArr.indexOf(currentId) === -1) {
             this.selectedIdArr.push(currentId)
         } else {
             let index = this.selectedIdArr.indexOf(currentId)
@@ -35,7 +35,7 @@ export default class Selectmultiple extends Component {
         // this.props.getCategoryContent(this.state.selectedIdArr)
     }
     render() {
-        const { toggleOptionsShowStatus, options, selectedIdArr, selectedStyle } = this.state
+        const { toggleOptionsShowStatus, options, selectedIdArr } = this.state
         const optionsMap = options.map(item => {
             return item.name
         })

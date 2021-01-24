@@ -4,6 +4,7 @@ import "./index.css";
 class Login extends Component {
     constructor(props){
         super(props)
+        this.state = {}
     }
     componentWillMount(){
         // 发送请求

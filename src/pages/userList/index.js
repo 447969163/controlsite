@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import "./index.css";
-// import Menu from "../menu/index";
 export default class UserList extends Component {
     constructor(props) {
         super(props)
@@ -38,7 +37,7 @@ export default class UserList extends Component {
                             {listData.map((item, i) => {
                                 return <tr key={i}>
                                     <td>{i + 1}</td>
-                                    <td><img src={item.avator} /></td>
+                                    <td><img src={item.avator} alt="用户头像"/></td>
                                     <td title={item.nick}>{item.nick}</td>
                                     <td title={item.openId}>{item.openId}</td>
                                     <td title={item.signTime}>{item.signTime}</td>

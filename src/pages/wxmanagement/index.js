@@ -3,6 +3,7 @@ import "./index.css";
 export default class WxManagement extends Component {
     constructor(props) {
         super(props)
+        this.state = {}
     }
     render() {
         return (

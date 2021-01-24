@@ -6,10 +6,11 @@ import AdManagement from "../pages/admanagement";
 import UserList from "../pages/userList";
 import WxManagement from "../pages/wxmanagement";
 import Article from "../pages/artitle";
-import Login from "../pages/login";
+// import Login from "../pages/login";
 export default class RouteView extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {}
     }
     render() {
         return (
@@ -24,8 +25,6 @@ export default class RouteView extends React.Component {
                 <Route path="/wxmanagement" component={WxManagement}></Route>
                 <Redirect from="/" to="/home"></Redirect>
             </Switch>
-
-
         )
     }
 }

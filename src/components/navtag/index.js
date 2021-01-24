@@ -4,6 +4,7 @@ import './index.css'
 class NavTag extends Component {
     constructor(props) {
         super(props)
+        this.state = {}
     }
     goBackToUrl(path,i){
         this.props.history.push(path)

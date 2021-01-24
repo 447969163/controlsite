@@ -19,7 +19,7 @@ class App extends Component {
   }
   // 获取menu组件切换路由
   getCurrentUrl(currentUrl) {
-    if (this.state.currentUrlList.indexOf(currentUrl) == -1) {
+    if (this.state.currentUrlList.indexOf(currentUrl) === -1) {
       this.state.currentUrlList.push(currentUrl)
     }
     this.setState({
